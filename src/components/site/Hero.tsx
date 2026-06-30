@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { useRef } from "react";
-import { HighwayScene } from "@/components/site/HighwayScene";
+import lkwNight from "@/assets/lkw-night.webp";
 import { useI18n } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
 
@@ -20,12 +20,14 @@ export function Hero() {
 
   return (
     <section ref={ref} id="home" className={`${theme === "dark" ? "dark" : ""} relative min-h-[100svh] flex items-center overflow-hidden bg-background`}>
-      {/* Animated night-highway background (looping) */}
+      {/* Real LKW night-highway background (parallax) */}
       <motion.div style={{ y, scale: imgScale, opacity: imgOpacity }} className="absolute inset-0">
-        <HighwayScene />
+        <img src={lkwNight} alt="" className="w-full h-full object-cover" />
       </motion.div>
       <div className="absolute inset-0 gold-grid-bg opacity-15" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+      {/* Darken left + bottom so the headline stays readable on the photo */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/45 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
       <div className="grain-overlay" />
 
       {/* Floating gold particles */}

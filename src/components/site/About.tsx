@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Zap, PhoneCall, Truck } from "lucide-react";
-import aboutImg from "@/assets/hero-tire.jpg";
+import aboutImg from "@/assets/lkw-lager.webp";
 import { useI18n } from "@/lib/i18n";
 
 const pillars = [

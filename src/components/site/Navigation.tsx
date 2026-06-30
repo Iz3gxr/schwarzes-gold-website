@@ -8,6 +8,9 @@ import { useI18n, LANGS, type Lang } from "@/lib/i18n";
 
 type NavLink = { key: string; to: string; hash?: string };
 
+// Website-Version: erste Zahl = wievielte komplette Erneuerung, zweite = kleine Änderung
+const SITE_VERSION = "6.1";
+
 const links: NavLink[] = [
   { key: "nav.home", to: "/" },
   { key: "nav.service", to: "/service" },
@@ -181,6 +184,15 @@ export function Navigation() {
               >
                 {t("nav.cta")} <ArrowRight className="w-4 h-4" />
               </Link>
+              {/* Version label */}
+              <div className="mt-3 pt-3 border-t border-border/60 flex items-center justify-between px-1">
+                <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                  Schwarzes Gold
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-gold/70 font-semibold">
+                  Version {SITE_VERSION}
+                </span>
+              </div>
             </motion.div>
           </>
         )}

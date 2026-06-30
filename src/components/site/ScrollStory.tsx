@@ -167,7 +167,7 @@ export function ScrollStory() {
   ];
 
   return (
-    <section ref={ref} className="relative" style={{ height: "320vh" }}>
+    <section ref={ref} className="relative h-[180vh] md:h-[320vh]">
       {/* Sticky viewport */}
       <div className="sticky top-0 h-screen overflow-hidden bg-[#100d08]">
 
